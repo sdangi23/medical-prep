@@ -1,0 +1,538 @@
+# RUHS MO 2026 - Full Syllabus with Topic Weights
+# Source: ruhsmo.in/rajasthan-mo-syllabus + syllabus analysis (920 PYQs, 9 papers)
+# Revision_count: how many times to revisit in 60-day plan (based on yield)
+
+subjects:
+
+  - id: MED
+    name: General Medicine
+    tier: 1
+    avg_qs_per_exam: 24.5
+    target_score: 21
+    revision_cycles: 3
+    topics:
+
+      - name: Diabetes Mellitus & DKA/HHS
+        subtopics: [DKA management, HHS, insulin regimens, complications, screening]
+        pyq_qs: 30
+        frequency: "9/9"
+        priority: P1
+
+      - name: Liver Disease & Jaundice
+        subtopics: [viral hepatitis types, cirrhosis, portal HTN, hepatic encephalopathy, jaundice types]
+        pyq_qs: 27
+        frequency: "9/9"
+        priority: P1
+
+      - name: Anaemia & Haematology
+        subtopics: [iron deficiency, megaloblastic, haemolytic, aplastic, sickle cell, thalassemia, classification]
+        pyq_qs: 25
+        frequency: "9/9"
+        priority: P1
+
+      - name: Neurology (Stroke & Seizures)
+        subtopics: [stroke types & management, epilepsy drugs, meningitis, GBS, Parkinsonism]
+        pyq_qs: 22
+        frequency: "9/9"
+        priority: P1
+
+      - name: Cardiology (MI & ECG)
+        subtopics: [MI diagnosis, ACS management, STEMI vs NSTEMI, ECG changes, arrhythmias, heart failure]
+        pyq_qs: 12
+        frequency: "6/9"
+        priority: P1
+
+      - name: Nephrology
+        subtopics: [AKI vs CKD, nephrotic syndrome, nephritic syndrome, electrolyte disorders, dialysis indications]
+        pyq_qs: 17
+        frequency: "8/9"
+        priority: P1
+
+      - name: Thyroid Disorders
+        subtopics: [hypothyroidism, hyperthyroidism, Graves disease, thyroid function tests, myxoedema coma]
+        pyq_qs: 12
+        frequency: "7/9"
+        priority: P1
+
+      - name: Tuberculosis
+        subtopics: [NTEP protocols, ATT regimens, drug side effects, MDR-TB, DOTS]
+        pyq_qs: 18
+        frequency: "8/9"
+        priority: P1
+
+      - name: Respiratory (Asthma/COPD/Pneumonia)
+        subtopics: [stepwise asthma management, COPD staging, CAP management, pleural effusion]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+      - name: Rheumatology
+        subtopics: [RA criteria, SLE diagnostic criteria, vasculitis, seronegative arthropathies]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+
+      - name: Gastroenterology
+        subtopics: [UGI bleed, pancreatitis, IBD, malabsorption]
+        pyq_qs: 10
+        frequency: "5/9"
+        priority: P2
+
+  - id: PSM
+    name: Community Medicine (PSM)
+    tier: 1
+    avg_qs_per_exam: 12.8
+    target_score: 11
+    revision_cycles: 3
+    topics:
+
+      - name: Vaccines & Cold Chain
+        subtopics: [UIP schedule, cold chain equipment, VPDs, new vaccines in UIP, cold chain failures]
+        pyq_qs: 16
+        frequency: "7/9"
+        priority: P1
+
+      - name: Family Planning & Contraception
+        subtopics: [IUDs types, OCPs, sterilization methods, PPIUCD, contraceptive failure rates]
+        pyq_qs: 18
+        frequency: "8/9"
+        priority: P1
+
+      - name: Vital Statistics & Mortality Rates
+        subtopics: [IMR, MMR, NMR, CBR, CDR, TFR, NRR, NNMR definitions & values]
+        pyq_qs: 14
+        frequency: "8/9"
+        priority: P1
+
+      - name: Epidemiology & Biostatistics
+        subtopics: [study designs, sensitivity/specificity, PPV/NPV, relative risk, odds ratio, p-value]
+        pyq_qs: 14
+        frequency: "7/9"
+        priority: P1
+
+      - name: Epidemic Investigation
+        subtopics: [outbreak steps, attack rate, secondary attack rate, cohort vs case-control in outbreaks]
+        pyq_qs: 14
+        frequency: "8/9"
+        priority: P1
+
+      - name: National Health Programs
+        subtopics: [NTEP, NVBDCP, RMNCH+A, RBSK, NPCDCS, Ayushman Bharat, NHM indicators]
+        pyq_qs: 12
+        frequency: "6/9"
+        priority: P1
+
+      - name: Nutrition & Deficiencies
+        subtopics: [PEM grading, vitamin deficiencies clinical features & treatment, mid-day meal scheme]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+      - name: Environmental Health & Water
+        subtopics: [water purification methods, water quality standards, sanitation, biomedical waste rules]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+
+  - id: PATH
+    name: Pathology
+    tier: 1
+    avg_qs_per_exam: 11.9
+    target_score: 10
+    revision_cycles: 3
+    topics:
+
+      - name: Neoplasia & Tumor Markers
+        subtopics: [benign vs malignant features, metastasis, carcinogenesis, tumor markers table, oncogenes]
+        pyq_qs: 47
+        frequency: "9/9"
+        priority: P1
+
+      - name: Haematological Pathology
+        subtopics: [leukemia classification (FAB), lymphoma (Hodgkin/NHL), myeloma, anaemia pathology]
+        pyq_qs: 24
+        frequency: "9/9"
+        priority: P1
+
+      - name: Cell Injury & Adaptation
+        subtopics: [apoptosis vs necrosis, reversible/irreversible injury, free radicals, atrophy/hypertrophy]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+      - name: Inflammation & Repair
+        subtopics: [acute vs chronic inflammation, granulomas, wound healing types, growth factors]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+
+      - name: Organ Pathology
+        subtopics: [liver path, kidney path, lung path, cardiovascular pathology]
+        pyq_qs: 12
+        frequency: "6/9"
+        priority: P2
+
+  - id: SURG
+    name: General Surgery
+    tier: 1
+    avg_qs_per_exam: 10.4
+    target_score: 8
+    revision_cycles: 2
+    topics:
+
+      - name: Fractures & Trauma
+        subtopics: [fracture types, healing, complications, head injury management, polytrauma ATLS]
+        pyq_qs: 30
+        frequency: "9/9"
+        priority: P1
+
+      - name: Acute Abdomen & Emergencies
+        subtopics: [appendicitis, peritonitis, intestinal obstruction, signs, management]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P1
+
+      - name: Shock Management
+        subtopics: [types, Parkland formula for burns, fluid resuscitation, vasopressors]
+        pyq_qs: 8
+        frequency: "6/9"
+        priority: P2
+
+      - name: Hepatobiliary Surgery
+        subtopics: [cholelithiasis, obstructive jaundice, pancreatitis surgical management]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+
+      - name: Thyroid & Breast Surgery
+        subtopics: [thyroid cancers, MEN syndromes, breast carcinoma staging, mastectomy types]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+
+      - name: Oesophageal Disorders
+        subtopics: [achalasia, carcinoma oesophagus, GERD surgical management]
+        pyq_qs: 12
+        frequency: "8/9"
+        priority: P2
+
+      - name: Hernias & Urology
+        subtopics: [hernia types, BPH management, renal stones, testicular torsion]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P3
+
+  - id: MICRO
+    name: Microbiology
+    tier: 1
+    avg_qs_per_exam: 9.8
+    target_score: 8
+    revision_cycles: 3
+    topics:
+
+      - name: Viral Infections & Exanthemata
+        subtopics: [measles, rubella, chickenpox, smallpox, dengue, HIV pathophysiology, hepatitis virology]
+        pyq_qs: 47
+        frequency: "9/9"
+        priority: P1
+
+      - name: Enteric Fever & Food-borne
+        subtopics: [typhoid Widal, Salmonella, cholera, food poisoning agents, botulism]
+        pyq_qs: 13
+        frequency: "9/9"
+        priority: P1
+
+      - name: Malaria & Parasites
+        subtopics: [malaria life cycle, species differences, drug resistance, treatment, helminthiasis]
+        pyq_qs: 14
+        frequency: "6/9"
+        priority: P1
+
+      - name: Bacterial Identification
+        subtopics: [gram staining, culture media, biochemical tests, important pathogens table]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+      - name: Immunoglobulins & Immunity
+        subtopics: [Ig types, complement, hypersensitivity types, vaccines (live vs killed)]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+      - name: Sterilization & Disinfection
+        subtopics: [methods table, autoclave, ETO, glutaraldehyde, hospital infection control]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+
+  - id: ANAT
+    name: Anatomy
+    tier: 2
+    avg_qs_per_exam: 8.7
+    target_score: 7
+    revision_cycles: 2
+    topics:
+
+      - name: Limb Nerves & Brachial Plexus
+        subtopics: [nerve injuries & deformities, brachial plexus roots, femoral/sciatic nerve, carpal tunnel]
+        pyq_qs: 11
+        frequency: "6/9"
+        priority: P1
+
+      - name: Arterial Supply
+        subtopics: [coronary arteries, cerebral circulation, mesenteric, renal, thyroid blood supply]
+        pyq_qs: 20
+        frequency: "8/9"
+        priority: P1
+
+      - name: Cranial Nerves
+        subtopics: [CN lesions, nerve exits, clinical presentations of CN palsies]
+        pyq_qs: 12
+        frequency: "7/9"
+        priority: P1
+
+      - name: Muscle Anatomy
+        subtopics: [rotator cuff, hand muscles, extraocular muscles, pelvic floor]
+        pyq_qs: 18
+        frequency: "8/9"
+        priority: P2
+
+      - name: Peripheral Nerve Injuries
+        subtopics: [Wallerian degeneration, Sunderland classification, nerve repair]
+        pyq_qs: 13
+        frequency: "8/9"
+        priority: P2
+
+  - id: BIOCHEM
+    name: Biochemistry
+    tier: 2
+    avg_qs_per_exam: 7.3
+    target_score: 6
+    revision_cycles: 2
+    topics:
+
+      - name: Vitamins & Deficiencies
+        subtopics: [fat-soluble vs water-soluble, deficiency clinical features, excess toxicity]
+        pyq_qs: 18
+        frequency: "8/9"
+        priority: P1
+
+      - name: Metabolic Cycles
+        subtopics: [glycolysis, TCA cycle, fatty acid oxidation, urea cycle, enzyme deficiencies]
+        pyq_qs: 12
+        frequency: "6/9"
+        priority: P2
+
+      - name: Acid-Base Balance
+        subtopics: [metabolic/respiratory acidosis & alkalosis, compensation, ABG interpretation]
+        pyq_qs: 9
+        frequency: "6/9"
+        priority: P2
+
+  - id: PHARM
+    name: Pharmacology
+    tier: 2
+    avg_qs_per_exam: 6.7
+    target_score: 5
+    revision_cycles: 2
+    topics:
+
+      - name: Antidotes & Poisoning
+        subtopics: [organophosphate, paracetamol, morphine, aspirin, iron poisoning antidotes]
+        pyq_qs: 13
+        frequency: "8/9"
+        priority: P1
+
+      - name: Cardiovascular Drugs
+        subtopics: [antihypertensives, antiarrhythmics, digoxin, anticoagulants, statins]
+        pyq_qs: 13
+        frequency: "8/9"
+        priority: P1
+
+      - name: Antimicrobials
+        subtopics: [ATT regimens, antibiotics mechanism & resistance, antimalarials, antifungals]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+      - name: ANS Drugs
+        subtopics: [adrenergic agonists/antagonists, cholinergic drugs, atropine, neostigmine]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+
+      - name: Antidiabetic Drugs
+        subtopics: [insulin types, oral hypoglycemics mechanism, newer agents (SGLT2, GLP-1)]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+
+  - id: ORTHO
+    name: Orthopaedics
+    tier: 2
+    avg_qs_per_exam: 5.4
+    target_score: 4
+    revision_cycles: 2
+    topics:
+      - name: Fractures
+        subtopics: [fracture types, complications, specific fractures (Colles, Smith, Pott's), management]
+        pyq_qs: 15
+        frequency: "7/9"
+        priority: P1
+      - name: Bone Infections & Tumors
+        subtopics: [osteomyelitis (acute vs chronic), bone tumors, Paget disease]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+      - name: Joint Disorders
+        subtopics: [OA vs RA joint involvement, TB spine, disc prolapse, CTEV]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+
+  - id: ENT
+    name: ENT
+    tier: 2
+    avg_qs_per_exam: 5.0
+    target_score: 4
+    revision_cycles: 2
+    topics:
+      - name: Otitis Media & Cholesteatoma
+        subtopics: [CSOM types, cholesteatoma features, complications, surgery]
+        pyq_qs: 11
+        frequency: "8/9"
+        priority: P1
+      - name: Epistaxis
+        subtopics: [Little's area, management steps, internal carotid bleeding]
+        pyq_qs: 6
+        frequency: "5/9"
+        priority: P2
+      - name: Laryngeal & Nasal Disorders
+        subtopics: [laryngeal carcinoma, DNS, sinusitis, foreign bodies]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+
+  - id: OPHTHO
+    name: Ophthalmology
+    tier: 2
+    avg_qs_per_exam: 4.9
+    target_score: 4
+    revision_cycles: 2
+    topics:
+      - name: Glaucoma
+        subtopics: [types, angle anatomy, drugs, surgery]
+        pyq_qs: 8
+        frequency: "6/9"
+        priority: P1
+      - name: Cataract
+        subtopics: [types, surgery (ECCE, phaco), IOL, complications]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+      - name: Retina & Other
+        subtopics: [diabetic retinopathy, RD, trachoma, vitamin A eye disease]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+
+  - id: PHYSIO
+    name: Physiology
+    tier: 2
+    avg_qs_per_exam: 4.6
+    target_score: 4
+    revision_cycles: 2
+    topics:
+      - name: Endocrine Physiology
+        subtopics: [thyroid, adrenal, pituitary hormones, insulin physiology]
+        pyq_qs: 20
+        frequency: "9/9"
+        priority: P1
+      - name: Cardiovascular Physiology
+        subtopics: [cardiac cycle, heart sounds, JVP, cardiac output, Frank-Starling]
+        pyq_qs: 8
+        frequency: "5/9"
+        priority: P2
+      - name: Renal Physiology
+        subtopics: [GFR, tubular function, concentration & dilution, JGA]
+        pyq_qs: 7
+        frequency: "5/9"
+        priority: P2
+
+  - id: FMT
+    name: Forensic Medicine & Toxicology
+    tier: 3
+    avg_qs_per_exam: 3.9
+    target_score: 3
+    revision_cycles: 2
+    topics:
+      - name: Legal Procedures & IPC Sections
+        subtopics: [MLC, dying declaration, IPC 302/376/312, consent types, medical negligence]
+        pyq_qs: 14
+        frequency: "8/9"
+        priority: P1
+      - name: Antidotes & Poisoning (FMT)
+        subtopics: [postmortem changes, rigor mortis, signs of drowning, asphyxia]
+        pyq_qs: 10
+        frequency: "6/9"
+        priority: P2
+
+  - id: OBG
+    name: Obstetrics & Gynaecology
+    tier: 3
+    avg_qs_per_exam: 3.8
+    target_score: 3
+    revision_cycles: 2
+    topics:
+      - name: Pregnancy & Labour
+        subtopics: [ANC visits, partograph, normal labour stages, episiotomy, PPH management]
+        pyq_qs: 52
+        frequency: "9/9"
+        priority: P1
+      - name: High-Risk Pregnancy
+        subtopics: [PIH, preeclampsia/eclampsia management, GDM, APH (abruption vs previa)]
+        pyq_qs: 18
+        frequency: "7/9"
+        priority: P1
+      - name: Gynaecology
+        subtopics: [fibroids, AUB (PALM-COEIN), endometriosis, cervical carcinoma, infertility]
+        pyq_qs: 12
+        frequency: "6/9"
+        priority: P2
+
+  - id: PAEDS
+    name: Paediatrics
+    tier: 3
+    avg_qs_per_exam: 3.4
+    target_score: 3
+    revision_cycles: 2
+    topics:
+      - name: Neonatal Problems
+        subtopics: [neonatal jaundice, HIE, NRP steps, prematurity complications, sepsis]
+        pyq_qs: 20
+        frequency: "9/9"
+        priority: P1
+      - name: Developmental Milestones
+        subtopics: [gross motor, fine motor, social, language milestones by age]
+        pyq_qs: 8
+        frequency: "6/9"
+        priority: P2
+      - name: Immunization & Nutrition
+        subtopics: [UIP schedule, PEM (Kwashiorkor vs Marasmus), IMNCI, diarrhoea ORS]
+        pyq_qs: 12
+        frequency: "6/9"
+        priority: P2
+
+  - id: RAD
+    name: Radiology
+    tier: 3
+    avg_qs_per_exam: 2.6
+    target_score: 2
+    revision_cycles: 1
+    topics:
+      - name: Imaging Modality Selection
+        subtopics: [CT vs MRI vs USG vs X-ray indications, contrast agents, radiation doses]
+        pyq_qs: 17
+        frequency: "9/9"
+        priority: P1

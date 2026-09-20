@@ -1,0 +1,22 @@
+# Python
+.python-version
+__pycache__/
+*.pyc
+.venv/
+uv.lock
+
+# Node
+web/node_modules/
+web/.next/
+web/out/
+
+# OS
+.DS_Store
+
+# Local / personal
+raw/
+text/
+log/
+bank/
+claude.md
+reademe.txt

@@ -1,0 +1,231 @@
+# RUHS MO Exam Pattern (2026)
+# Source: ruhsmo.in + historical analysis (920 Qs across 9 papers: 2013–2024)
+
+exam:
+  name: RUHS Medical Officer (MO) Recruitment Exam 2026
+  date: 2026-12-13
+  mode: Offline OMR / CBT
+  duration_min: 120
+  total_questions: 100
+  total_marks: 100
+  marks_per_correct: 1
+  negative_marking: false   # historically never applied; verify 2026 notification
+  cutoff_trend: rising      # UR ~72 in 2024, expected 74-76 in 2026
+
+papers_analyzed:
+  years: [2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024]
+  total_papers: 9
+  total_questions_analyzed: 920
+
+subject_distribution:
+  # avg_per_exam = total_questions / 9 papers
+  # tier: 1 = Big Five (68%), 2 = Medium (23%), 3 = Shorts (13%)
+
+  - subject: General Medicine
+    tier: 1
+    total_qs_in_pyqs: 221
+    avg_per_exam: 24.5
+    pct_of_exam: 24.0
+    priority: MUST_MASTER
+
+  - subject: Community Medicine (PSM)
+    tier: 1
+    total_qs_in_pyqs: 115
+    avg_per_exam: 12.8
+    pct_of_exam: 12.5
+    priority: MUST_MASTER
+
+  - subject: Pathology
+    tier: 1
+    total_qs_in_pyqs: 107
+    avg_per_exam: 11.9
+    pct_of_exam: 11.6
+    priority: MUST_MASTER
+
+  - subject: General Surgery
+    tier: 1
+    total_qs_in_pyqs: 94
+    avg_per_exam: 10.4
+    pct_of_exam: 10.2
+    priority: MUST_MASTER
+
+  - subject: Microbiology
+    tier: 1
+    total_qs_in_pyqs: 88
+    avg_per_exam: 9.8
+    pct_of_exam: 9.6
+    priority: MUST_MASTER
+
+  - subject: Anatomy
+    tier: 2
+    total_qs_in_pyqs: 78
+    avg_per_exam: 8.7
+    pct_of_exam: 8.5
+    priority: HIGH
+
+  - subject: Biochemistry
+    tier: 2
+    total_qs_in_pyqs: 66
+    avg_per_exam: 7.3
+    pct_of_exam: 7.2
+    priority: HIGH
+
+  - subject: Pharmacology
+    tier: 2
+    total_qs_in_pyqs: 60
+    avg_per_exam: 6.7
+    pct_of_exam: 6.5
+    priority: HIGH
+
+  - subject: Orthopaedics
+    tier: 2
+    total_qs_in_pyqs: 49
+    avg_per_exam: 5.4
+    pct_of_exam: 5.3
+    priority: MEDIUM
+
+  - subject: ENT
+    tier: 2
+    total_qs_in_pyqs: 45
+    avg_per_exam: 5.0
+    pct_of_exam: 4.9
+    priority: MEDIUM
+
+  - subject: Ophthalmology
+    tier: 2
+    total_qs_in_pyqs: 44
+    avg_per_exam: 4.9
+    pct_of_exam: 4.8
+    priority: MEDIUM
+
+  - subject: Physiology
+    tier: 2
+    total_qs_in_pyqs: 41
+    avg_per_exam: 4.6
+    pct_of_exam: 4.5
+    priority: MEDIUM
+
+  - subject: Forensic Medicine & Toxicology
+    tier: 3
+    total_qs_in_pyqs: 35
+    avg_per_exam: 3.9
+    pct_of_exam: 3.8
+    priority: MEDIUM
+
+  - subject: Obstetrics & Gynaecology
+    tier: 3
+    total_qs_in_pyqs: 34
+    avg_per_exam: 3.8
+    pct_of_exam: 3.7
+    priority: MEDIUM
+
+  - subject: Paediatrics
+    tier: 3
+    total_qs_in_pyqs: 31
+    avg_per_exam: 3.4
+    pct_of_exam: 3.4
+    priority: MEDIUM
+
+  - subject: Radiology
+    tier: 3
+    total_qs_in_pyqs: 23
+    avg_per_exam: 2.6
+    pct_of_exam: 2.5
+    priority: LOW
+
+guaranteed_topics:
+  # appeared in ALL 9 papers (100% frequency)
+  - topic: Neoplasia & tumor markers
+    subject: Pathology
+    total_qs: 47
+    frequency: "9/9"
+
+  - topic: Viral infections & exanthemata
+    subject: Microbiology
+    total_qs: 47
+    frequency: "9/9"
+
+  - topic: Diabetes mellitus
+    subject: Medicine
+    total_qs: 30
+    frequency: "9/9"
+
+  - topic: Liver disease & jaundice
+    subject: Medicine
+    total_qs: 27
+    frequency: "9/9"
+
+  - topic: Anaemia & haematology
+    subject: Medicine
+    total_qs: 25
+    frequency: "9/9"
+
+  - topic: Haematological pathology
+    subject: Pathology
+    total_qs: 24
+    frequency: "9/9"
+
+  - topic: Neurology (stroke, seizures)
+    subject: Medicine
+    total_qs: 22
+    frequency: "9/9"
+
+  - topic: Endocrine physiology
+    subject: Physiology
+    total_qs: 20
+    frequency: "9/9"
+
+  - topic: Neonatal problems
+    subject: Paediatrics
+    total_qs: 20
+    frequency: "9/9"
+
+  - topic: Imaging modality selection
+    subject: Radiology
+    total_qs: 17
+    frequency: "9/9"
+
+  - topic: Enteric fever & food-borne infections
+    subject: Microbiology
+    total_qs: 13
+    frequency: "9/9"
+
+near_guaranteed_topics:
+  # 8/9 papers = 88.9% frequency
+  - { topic: "Family planning & IUDs", subject: PSM, qs: 18, absent_year: 2016 }
+  - { topic: "Tuberculosis", subject: Medicine/Microbiology, qs: 18, absent_year: 2016 }
+  - { topic: "Vitamins & deficiencies", subject: Biochemistry, qs: 18, absent_year: 2015 }
+  - { topic: "Arterial supply (anatomy)", subject: Anatomy, qs: 20, absent_year: 2015 }
+  - { topic: "Vital statistics & mortality rates", subject: PSM, qs: 14, absent_year: 2024 }
+  - { topic: "Epidemic investigation", subject: PSM, qs: 14, absent_year: 2017 }
+  - { topic: "Nephrology", subject: Medicine, qs: 17, absent_year: 2019 }
+  - { topic: "Muscle anatomy", subject: Anatomy, qs: 18, absent_year: 2022 }
+  - { topic: "Peripheral nerve injuries", subject: Anatomy, qs: 13, absent_year: 2016 }
+  - { topic: "Cardiovascular drugs", subject: Pharmacology, qs: 13, absent_year: 2013 }
+  - { topic: "Legal procedures & FMT", subject: FMT, qs: 14, absent_year: 2019 }
+  - { topic: "Oesophageal disorders", subject: Surgery, qs: 12, absent_year: 2017 }
+  - { topic: "Labour complications", subject: OBG, qs: 10, absent_year: 2020 }
+  - { topic: "Otitis media & cholesteatoma", subject: ENT, qs: 11, absent_year: 2016 }
+
+top_ranked_topics:
+  - { rank: 1,  topic: "Pregnancy & labour",         freq: "9/9", qs: 52 }
+  - { rank: 2,  topic: "Fractures & trauma",          freq: "9/9", qs: 30 }
+  - { rank: 3,  topic: "Neonatal problems",            freq: "8/9", qs: 21 }
+  - { rank: 4,  topic: "Antidotes & poisoning",        freq: "8/9", qs: 13 }
+  - { rank: 5,  topic: "Vaccines & cold chain",        freq: "7/9", qs: 16 }
+  - { rank: 6,  topic: "Insulin & diabetes",           freq: "7/9", qs: 16 }
+  - { rank: 7,  topic: "Thyroid disorders",            freq: "7/9", qs: 12 }
+  - { rank: 8,  topic: "Malaria & parasites",          freq: "6/9", qs: 14 }
+  - { rank: 9,  topic: "MI & ECG diagnostics",         freq: "6/9", qs: 12 }
+  - { rank: 10, topic: "Limb nerves & brachial plexus",freq: "6/9", qs: 11 }
+  - { rank: 11, topic: "Contraception",                freq: "8/9", qs: 18 }
+  - { rank: 12, topic: "Vitamin deficiencies",         freq: "8/9", qs: 18 }
+  - { rank: 13, topic: "Anaemia classification",       freq: "8/9", qs: 15 }
+  - { rank: 14, topic: "Epidemiology measures",        freq: "7/9", qs: 14 }
+  - { rank: 15, topic: "Cranial nerves",               freq: "7/9", qs: 12 }
+  - { rank: 16, topic: "Jaundice",                     freq: "7/9", qs: 14 }
+  - { rank: 17, topic: "Immunoglobulins",              freq: "6/9", qs: 10 }
+  - { rank: 18, topic: "Bacterial identification",     freq: "6/9", qs: 10 }
+  - { rank: 19, topic: "Acid-base balance",            freq: "6/9", qs: 9 }
+  - { rank: 20, topic: "Immunization schedule",        freq: "8/9", qs: 16 }
+  - { rank: 21, topic: "Developmental milestones",     freq: "6/9", qs: 8 }

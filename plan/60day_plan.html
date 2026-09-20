@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUHS MO 2026 — 60-Day Study Plan</title>
+<style>
+  :root {
+    --blue: #1a56db;
+    --blue-light: #e8f0fe;
+    --green: #057a55;
+    --green-light: #def7ec;
+    --orange: #c27803;
+    --orange-light: #fdf6b2;
+    --red: #c81e1e;
+    --red-light: #fde8e8;
+    --purple: #6c2bd9;
+    --purple-light: #edebfe;
+    --gray: #374151;
+    --gray-light: #f9fafb;
+    --border: #e5e7eb;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #111827;
+    background: #fff;
+    padding: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1a3a6b 0%, #1a56db 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px 22px 16px;
+    margin-bottom: 20px;
+  }
+  .header h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .header-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .badge {
+    background: rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ── SECTION HEADERS ── */
+  h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--blue);
+    border-radius: 8px 8px 0 0;
+    padding: 8px 14px;
+    margin-top: 22px;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    border-left: 3px solid var(--blue);
+    padding: 4px 0 4px 10px;
+    margin: 14px 0 6px;
+    background: var(--blue-light);
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* ── BLOCKQUOTE ── */
+  blockquote {
+    background: var(--orange-light);
+    border-left: 4px solid var(--orange);
+    border-radius: 4px;
+    padding: 7px 12px;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #5c4a00;
+  }
+
+  /* ── TABLES ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
+    margin-bottom: 4px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  thead tr { background: #eef2ff; }
+  th {
+    padding: 7px 10px;
+    text-align: left;
+    font-weight: 700;
+    color: #374151;
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: var(--gray-light); }
+  tr:hover td { background: var(--blue-light); }
+
+  /* phase colour rows */
+  .ph1 td:first-child { border-left: 3px solid #f97316; }
+  .ph2 td:first-child { border-left: 3px solid var(--blue); }
+  .ph3 td:first-child { border-left: 3px solid var(--green); }
+  .ph4 td:first-child { border-left: 3px solid var(--purple); }
+  .mock td:first-child { border-left: 3px solid var(--red); }
+
+  /* highlight mock/revision rows */
+  .highlight td { font-weight: 700; color: var(--red); background: var(--red-light) !important; }
+
+  /* ── FLASHCARD BOX ── */
+  .flashcard-section {
+    background: var(--gray-light);
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 12px 14px;
+  }
+  .fc-group { margin-bottom: 14px; }
+  .fc-group:last-child { margin-bottom: 0; }
+  .fc-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--purple);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .fc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px;
+  }
+  .fc-item {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  .fc-item strong { color: var(--blue); }
+
+  /* ── TRACKER TABLE ── */
+  .tracker th:nth-child(n+3) { text-align: center; }
+  .tracker td:nth-child(n+3) { text-align: center; }
+  .tracker td:last-child { color: #9ca3af; font-style: italic; }
+
+  /* ── NOTE BOXES ── */
+  .note {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin: 8px 0;
+  }
+  .note-blue { background: var(--blue-light); border-left: 3px solid var(--blue); color: #1e3a8a; }
+  .note-green { background: var(--green-light); border-left: 3px solid var(--green); color: #064e3b; }
+  .note-red { background: var(--red-light); border-left: 3px solid var(--red); color: #7f1d1d; }
+
+  /* ── FILE LIST ── */
+  .file-list {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+  }
+  .file-tag {
+    background: #f3f4f6;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    color: var(--purple);
+  }
+
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  hr { display: none; }
+
+  /* ── PRINT / PDF ── */
+  @media print {
+    body { padding: 8px; font-size: 11px; }
+    h2 { font-size: 13px; page-break-before: auto; }
+    tr { page-break-inside: avoid; }
+    .header h1 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <h1>RUHS MO 2026 — 60-Day Study Plan</h1>
+  <div class="header-meta">
+    <span class="badge">📅 Exam: Dec 13, 2026</span>
+    <span class="badge">🗓 Start: Sep 20, 2026</span>
+    <span class="badge">⏱ 3–4h / day</span>
+    <span class="badge">🎯 Target: 85+ / 100</span>
+    <span class="badge">📊 UR Cutoff: ~74–76</span>
+  </div>
+</div>
+
+<!-- ═══ SCORE ARCHITECTURE ═══ -->
+<h2>Score Architecture — How to Hit 85</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Subject</th><th>Avg Qs</th><th>Target</th><th>Headroom</th></tr></thead>
+  <tbody>
+    <tr><td>General Medicine</td><td>24–25</td><td>21</td><td>3–4</td></tr>
+    <tr><td>PSM / Community Medicine</td><td>12–13</td><td>11</td><td>1–2</td></tr>
+    <tr><td>Pathology</td><td>11–12</td><td>10</td><td>1–2</td></tr>
+    <tr><td>General Surgery</td><td>10–11</td><td>8</td><td>2–3</td></tr>
+    <tr><td>Microbiology</td><td>9–10</td><td>8</td><td>1–2</td></tr>
+    <tr><td>Anatomy</td><td>8–9</td><td>7</td><td>1–2</td></tr>
+    <tr><td>Biochemistry</td><td>7–8</td><td>6</td><td>1–2</td></tr>
+    <tr><td>Pharmacology</td><td>6–7</td><td>5</td><td>1–2</td></tr>
+    <tr><td>Ortho + ENT + Ophtho</td><td>14–15</td><td>11</td><td>3–4</td></tr>
+    <tr><td>Physiology + FMT</td><td>8–9</td><td>6</td><td>2–3</td></tr>
+    <tr><td>OBG + Paeds + Rad</td><td>9–10</td><td>8</td><td>1–2</td></tr>
+    <tr style="font-weight:700;background:#e8f0fe"><td><strong>TOTAL</strong></td><td><strong>100</strong></td><td><strong>≥85</strong></td><td></td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══ DAILY SCHEDULE ═══ -->
+<h2>Daily Schedule Template</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Slot</th><th>Duration</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr><td>Morning</td><td>60–75 min</td><td>Theory: read notes or standard text for today's topic</td></tr>
+    <tr><td>Mid-morning</td><td>60 min</td><td>MCQ drill: 30–40 Qs from topic (PYQs + test series)</td></tr>
+    <tr><td>Afternoon</td><td>30 min</td><td>Error review: annotate wrong answers into notes</td></tr>
+    <tr><td>Evening</td><td>30–45 min</td><td>Flashcard review / spaced repetition of previous topics</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="note note-green" style="margin-top:0;border-radius:0 0 8px 8px;border-top:none">
+  <strong>Rest Day:</strong> Every Sunday — review only, no new topics.
+</div>
+
+<!-- ═══ PHASE 1 ═══ -->
+<h2>Phase 1 — Foundation &amp; Guaranteed Topics (Days 1–10 · Sep 20–29)</h2>
+<blockquote>Goal: Build anchor knowledge on 11 topics that appeared in ALL 9 papers (~30% of exam marks)</blockquote>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th><th>Subject</th><th>PYQ Qs</th></tr></thead>
+  <tbody>
+    <tr class="ph1"><td>1</td><td>Sep 20</td><td>Diabetes Mellitus (DKA, HHS, insulin, complications)</td><td>Medicine</td><td>30</td></tr>
+    <tr class="ph1"><td>2</td><td>Sep 21</td><td>Liver Disease &amp; Jaundice (hepatitis types, cirrhosis, portal HTN)</td><td>Medicine</td><td>27</td></tr>
+    <tr class="ph1"><td>3</td><td>Sep 22</td><td>Anaemia &amp; Haematology (classification, iron, megaloblastic, haemolytic)</td><td>Medicine</td><td>25</td></tr>
+    <tr class="ph1"><td>4</td><td>Sep 23</td><td>Neoplasia &amp; Tumor Markers (benign vs malignant, markers table)</td><td>Pathology</td><td>47</td></tr>
+    <tr class="ph1"><td>5</td><td>Sep 24</td><td>Viral Infections &amp; Exanthemata (measles, dengue, HIV, hepatitis)</td><td>Microbiology</td><td>47</td></tr>
+    <tr class="ph1"><td>6</td><td>Sep 25</td><td>Neurology: Stroke, Seizures, Meningitis</td><td>Medicine</td><td>22</td></tr>
+    <tr class="ph1"><td>7</td><td>Sep 26</td><td>Endocrine Physiology (thyroid, adrenal, pituitary, insulin physiology)</td><td>Physiology</td><td>20</td></tr>
+    <tr class="ph1"><td>8</td><td>Sep 27</td><td>Neonatal Problems (jaundice, NRP, HIE, prematurity)</td><td>Paediatrics</td><td>20</td></tr>
+    <tr class="ph1"><td>9</td><td>Sep 28</td><td>Enteric Fever &amp; Food-borne (typhoid, cholera, Salmonella)</td><td>Microbiology</td><td>13</td></tr>
+    <tr class="ph1"><td>10</td><td>Sep 29</td><td>Imaging Modality Selection (CT/MRI/USG indications)</td><td>Radiology</td><td>17</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="note note-blue" style="margin-top:0;border-radius:0 0 8px 8px;border-top:none">
+  <strong>Phase 1 MCQ Target:</strong> 60–70 Qs/day from PYQs on that day's topic.
+</div>
+
+<!-- ═══ PHASE 2 ═══ -->
+<h2>Phase 2 — Big Five Deep Dive (Days 11–35 · Sep 30–Oct 24)</h2>
+<blockquote>Goal: Dominate subjects worth 68% of the exam. Each topic 2–3 days.</blockquote>
+
+<h3>General Medicine (Days 11–18)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th></tr></thead>
+  <tbody>
+    <tr class="ph2"><td>11</td><td>Sep 30</td><td>Cardiology: MI, ACS, ECG changes, heart failure, arrhythmias</td></tr>
+    <tr class="ph2"><td>12</td><td>Oct 01</td><td>Nephrology: AKI, CKD, nephrotic syndrome, electrolytes</td></tr>
+    <tr class="ph2"><td>13</td><td>Oct 02</td><td>Thyroid disorders: hypothyroid, hyperthyroid, Graves, myxoedema coma</td></tr>
+    <tr class="ph2"><td>14</td><td>Oct 03</td><td>Tuberculosis: NTEP, ATT regimens, drug side effects, MDR-TB</td></tr>
+    <tr class="ph2"><td>15</td><td>Oct 04</td><td>Respiratory: Asthma, COPD, pneumonia, pleural effusion</td></tr>
+    <tr class="ph2"><td>16</td><td>Oct 05</td><td>Rheumatology: RA, SLE, vasculitis, seronegative arthropathies</td></tr>
+    <tr class="ph2"><td>17</td><td>Oct 06</td><td>Gastroenterology: UGI bleed, pancreatitis, IBD, malabsorption</td></tr>
+    <tr class="ph2 highlight"><td>18</td><td>Oct 07</td><td>Medicine Full Revision — 60 MCQ mock, review errors</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Community Medicine / PSM (Days 19–23)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th></tr></thead>
+  <tbody>
+    <tr class="ph2"><td>19</td><td>Oct 08</td><td>Epidemiology: study designs, sensitivity/specificity, RR, OR</td></tr>
+    <tr class="ph2"><td>20</td><td>Oct 09</td><td>Vital statistics: IMR, MMR, NMR, CBR, CDR, TFR (memorize all values)</td></tr>
+    <tr class="ph2"><td>21</td><td>Oct 10</td><td>Vaccines &amp; Cold Chain: UIP schedule, cold chain equipment, VPDs</td></tr>
+    <tr class="ph2"><td>22</td><td>Oct 11</td><td>National Health Programs: NTEP, NVBDCP, RMNCH+A, RBSK, Ayushman</td></tr>
+    <tr class="ph2 highlight"><td>23</td><td>Oct 12</td><td>Family Planning &amp; Epidemic Investigation — 40 MCQ mix</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Pathology Deep Dive (Days 24–27)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th></tr></thead>
+  <tbody>
+    <tr class="ph2"><td>24</td><td>Oct 13</td><td>Haematological Pathology: leukemia (FAB), lymphoma, myeloma</td></tr>
+    <tr class="ph2"><td>25</td><td>Oct 14</td><td>Cell Injury &amp; Inflammation: apoptosis, necrosis, granulomas, wound healing</td></tr>
+    <tr class="ph2"><td>26</td><td>Oct 15</td><td>Organ Pathology: liver, kidney, lung, CVS pathology</td></tr>
+    <tr class="ph2 highlight"><td>27</td><td>Oct 16</td><td>Pathology Full Revision — 50 MCQ mock</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>General Surgery (Days 28–31)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th></tr></thead>
+  <tbody>
+    <tr class="ph2"><td>28</td><td>Oct 17</td><td>Fractures &amp; Trauma: ATLS, fracture complications, specific fractures</td></tr>
+    <tr class="ph2"><td>29</td><td>Oct 18</td><td>Acute Abdomen: appendicitis, peritonitis, obstruction, hernias</td></tr>
+    <tr class="ph2"><td>30</td><td>Oct 19</td><td>Burns, Shock, Oesophageal disorders, Hepatobiliary surgery</td></tr>
+    <tr class="ph2 highlight"><td>31</td><td>Oct 20</td><td>Thyroid/Breast surgery, Urology — 40 MCQ mix</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Microbiology (Days 32–35)</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th></tr></thead>
+  <tbody>
+    <tr class="ph2"><td>32</td><td>Oct 21</td><td>Malaria &amp; Parasites: life cycle, species, treatment, resistance</td></tr>
+    <tr class="ph2"><td>33</td><td>Oct 22</td><td>Bacterial Identification: gram staining, culture media, key pathogens</td></tr>
+    <tr class="ph2"><td>34</td><td>Oct 23</td><td>Immunology: Ig types, hypersensitivity, complement, vaccines</td></tr>
+    <tr class="ph2 highlight"><td>35</td><td>Oct 24</td><td>Sterilization &amp; Disinfection — 40 MCQ mix + Big Five overall review</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══ PHASE 3 ═══ -->
+<h2>Phase 3 — Tier 2 Basic Sciences + Short Specialties (Days 36–48 · Oct 25–Nov 6)</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Topic</th><th>Subject</th></tr></thead>
+  <tbody>
+    <tr class="ph3"><td>36</td><td>Oct 25</td><td>Limb Nerves &amp; Brachial Plexus + Cranial Nerves</td><td>Anatomy</td></tr>
+    <tr class="ph3"><td>37</td><td>Oct 26</td><td>Arterial Supply + Muscle Anatomy</td><td>Anatomy</td></tr>
+    <tr class="ph3"><td>38</td><td>Oct 27</td><td>Peripheral Nerve Injuries + Anatomy MCQ drill (40 Qs)</td><td>Anatomy</td></tr>
+    <tr class="ph3"><td>39</td><td>Oct 28</td><td>Vitamins &amp; Deficiencies (comprehensive table)</td><td>Biochemistry</td></tr>
+    <tr class="ph3"><td>40</td><td>Oct 29</td><td>Metabolic Cycles + Acid-Base Balance (ABG interpretation)</td><td>Biochemistry</td></tr>
+    <tr class="ph3"><td>41</td><td>Oct 30</td><td>Antidotes &amp; Poisoning + CVS Drugs</td><td>Pharmacology</td></tr>
+    <tr class="ph3"><td>42</td><td>Oct 31</td><td>ANS Drugs + Antimicrobials + Antidiabetics</td><td>Pharmacology</td></tr>
+    <tr class="ph3"><td>43</td><td>Nov 01</td><td>Fractures, Bone Infections, Joint Disorders</td><td>Orthopaedics</td></tr>
+    <tr class="ph3"><td>44</td><td>Nov 02</td><td>CSOM, Epistaxis, Laryngeal disorders</td><td>ENT</td></tr>
+    <tr class="ph3"><td>45</td><td>Nov 03</td><td>Glaucoma, Cataract, Retinal disorders</td><td>Ophthalmology</td></tr>
+    <tr class="ph3"><td>46</td><td>Nov 04</td><td>Renal + CVS Physiology</td><td>Physiology</td></tr>
+    <tr class="ph3"><td>47</td><td>Nov 05</td><td>Legal Procedures, IPC, FMT + Postmortem changes</td><td>FMT</td></tr>
+    <tr class="ph3"><td>48</td><td>Nov 06</td><td>OBG: Pregnancy, Labour, PIH, GDM, PPH, Gynaecology</td><td>OBG</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══ PHASE 4 ═══ -->
+<h2>Phase 4 — First High-Yield Revision Cycle (Days 49–54 · Nov 7–12)</h2>
+<blockquote>Re-read notes only (no new material). 60–80 MCQs per session.</blockquote>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Revision Focus</th></tr></thead>
+  <tbody>
+    <tr class="ph4"><td>49</td><td>Nov 07</td><td>Medicine: DM, Liver, Anaemia, Neurology, Cardiology</td></tr>
+    <tr class="ph4"><td>50</td><td>Nov 08</td><td>PSM: Epidemiology, Vital stats, Vaccines, NHP</td></tr>
+    <tr class="ph4"><td>51</td><td>Nov 09</td><td>Pathology: Neoplasia, Haematology + Microbiology: Viral, Typhoid</td></tr>
+    <tr class="ph4"><td>52</td><td>Nov 10</td><td>Surgery: Fractures, Acute abdomen + Pharmacology: Antidotes, CVS drugs</td></tr>
+    <tr class="ph4"><td>53</td><td>Nov 11</td><td>Anatomy: Nerves, Arteries + Biochemistry: Vitamins, Acid-base</td></tr>
+    <tr class="ph4"><td>54</td><td>Nov 12</td><td>Shorts: Ortho, ENT, Ophtho, Physiology, FMT, OBG, Paeds</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══ PHASE 5 ═══ -->
+<h2>Phase 5 — Full-Length Mock Tests (Days 55–60 · Nov 13–18)</h2>
+<blockquote>Simulate actual exam conditions: 100 Qs in 120 min. Analyse each test.</blockquote>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Day</th><th>Date</th><th>Activity</th></tr></thead>
+  <tbody>
+    <tr class="mock highlight"><td>55</td><td>Nov 13</td><td>Mock Test 1 (2024 PYQ full paper) — score &amp; analyse</td></tr>
+    <tr class="mock"><td>56</td><td>Nov 14</td><td>Weak area targeted revision from Mock 1 errors</td></tr>
+    <tr class="mock highlight"><td>57</td><td>Nov 15</td><td>Mock Test 2 (2022 PYQ full paper) — score &amp; analyse</td></tr>
+    <tr class="mock"><td>58</td><td>Nov 16</td><td>Weak area targeted revision from Mock 2 errors</td></tr>
+    <tr class="mock highlight"><td>59</td><td>Nov 17</td><td>Mock Test 3 (2020 PYQ full paper) — score &amp; analyse</td></tr>
+    <tr class="mock highlight"><td>60</td><td>Nov 18</td><td>Grand Review: guaranteed topics flashcards + score tracker</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══ BUFFER PHASE ═══ -->
+<h2>Buffer Phase — Final 25 Days (Nov 19 – Dec 13)</h2>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Week</th><th>Focus</th></tr></thead>
+  <tbody>
+    <tr><td>Nov 19–25</td><td>Second revision cycle (Phase 4 repeat)</td></tr>
+    <tr><td>Nov 26–Dec 2</td><td>Mock Test 4 + 5 (test series mocks) + error correction</td></tr>
+    <tr><td>Dec 3–9</td><td>Guaranteed topics 3rd pass — flashcards/notes only</td></tr>
+    <tr><td>Dec 10–12</td><td>Light revision only — no new topics. Sleep 8h.</td></tr>
+    <tr style="font-weight:700;background:#fde8e8;color:#c81e1e"><td>Dec 13</td><td>EXAM DAY</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ═══ FLASHCARDS ═══ -->
+<h2>High-Yield Flashcard List (Memorize First Week)</h2>
+<div class="flashcard-section">
+
+  <div class="fc-group">
+    <div class="fc-title">PSM Numbers to Memorize</div>
+    <div class="fc-list">
+      <div class="fc-item"><strong>IMR target 2030:</strong> &lt;20 | Current India: ~28</div>
+      <div class="fc-item"><strong>MMR current:</strong> ~97 / 1,00,000 live births</div>
+      <div class="fc-item"><strong>NMR:</strong> ~20 | <strong>NNMR:</strong> ~12</div>
+      <div class="fc-item"><strong>TFR replacement:</strong> 2.1 | India current: ~2.0</div>
+      <div class="fc-item"><strong>Kwashiorkor:</strong> protein def | <strong>Marasmus:</strong> calorie def</div>
+    </div>
+  </div>
+
+  <div class="fc-group">
+    <div class="fc-title">UIP Schedule 2026</div>
+    <div class="fc-list">
+      <div class="fc-item"><strong>BCG:</strong> birth</div>
+      <div class="fc-item"><strong>OPV:</strong> birth, 6/10/14wk, 9m, 5y</div>
+      <div class="fc-item"><strong>IPV:</strong> 6/14wk</div>
+      <div class="fc-item"><strong>Hep B:</strong> birth, 6/10/14wk</div>
+      <div class="fc-item"><strong>Penta:</strong> 6/10/14wk</div>
+      <div class="fc-item"><strong>Rota:</strong> 6/10/14wk</div>
+      <div class="fc-item"><strong>PCV:</strong> 6/10/14m</div>
+      <div class="fc-item"><strong>fIPV:</strong> 14wk, 6m</div>
+      <div class="fc-item"><strong>MR:</strong> 9m, 16–24m</div>
+      <div class="fc-item"><strong>JE:</strong> 9m, 16–24m (endemic)</div>
+      <div class="fc-item"><strong>Td:</strong> 10y, 16y</div>
+    </div>
+  </div>
+
+  <div class="fc-group">
+    <div class="fc-title">Tumor Markers</div>
+    <div class="fc-list">
+      <div class="fc-item"><strong>AFP:</strong> HCC, yolk sac</div>
+      <div class="fc-item"><strong>CEA:</strong> colon</div>
+      <div class="fc-item"><strong>CA-125:</strong> ovary</div>
+      <div class="fc-item"><strong>PSA:</strong> prostate</div>
+      <div class="fc-item"><strong>CA-19-9:</strong> pancreas</div>
+      <div class="fc-item"><strong>β-HCG:</strong> choriocarcinoma</div>
+      <div class="fc-item"><strong>LDH:</strong> lymphoma / testis</div>
+      <div class="fc-item"><strong>Calcitonin:</strong> medullary thyroid</div>
+    </div>
+  </div>
+
+  <div class="fc-group">
+    <div class="fc-title">ECG in MI (Chronological)</div>
+    <div class="fc-list">
+      <div class="fc-item"><strong>Hyperacute T:</strong> first change (mins)</div>
+      <div class="fc-item"><strong>ST elevation:</strong> injury (hours)</div>
+      <div class="fc-item"><strong>Q wave:</strong> infarction (hours–days)</div>
+      <div class="fc-item"><strong>T inversion:</strong> evolving (days–weeks)</div>
+    </div>
+  </div>
+
+  <div class="fc-group">
+    <div class="fc-title">Drug Antidotes (All 8 Tested)</div>
+    <div class="fc-list">
+      <div class="fc-item"><strong>Organophosphate →</strong> Atropine + Pralidoxime</div>
+      <div class="fc-item"><strong>Paracetamol →</strong> N-acetylcysteine</div>
+      <div class="fc-item"><strong>Opioids →</strong> Naloxone</div>
+      <div class="fc-item"><strong>Warfarin →</strong> Vitamin K / FFP</div>
+      <div class="fc-item"><strong>Heparin →</strong> Protamine sulfate</div>
+      <div class="fc-item"><strong>Iron →</strong> Desferrioxamine</div>
+      <div class="fc-item"><strong>BZD →</strong> Flumazenil</div>
+      <div class="fc-item"><strong>CO →</strong> 100% O₂ / hyperbaric O₂</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ PERFORMANCE TRACKER ═══ -->
+<h2>Weekly Performance Tracker</h2>
+<div class="table-wrap">
+<table class="tracker">
+  <thead><tr><th>Week</th><th>Days</th><th>MCQs Planned</th><th>Target Accuracy</th><th>Actual Score</th></tr></thead>
+  <tbody>
+    <tr><td>W1</td><td>1–7</td><td>300</td><td>≥55%</td><td>___</td></tr>
+    <tr><td>W2</td><td>8–14</td><td>350</td><td>≥60%</td><td>___</td></tr>
+    <tr><td>W3</td><td>15–21</td><td>350</td><td>≥65%</td><td>___</td></tr>
+    <tr><td>W4</td><td>22–28</td><td>350</td><td>≥70%</td><td>___</td></tr>
+    <tr><td>W5</td><td>29–35</td><td>350</td><td>≥72%</td><td>___</td></tr>
+    <tr><td>W6</td><td>36–42</td><td>300</td><td>≥74%</td><td>___</td></tr>
+    <tr><td>W7</td><td>43–49</td><td>300</td><td>≥76%</td><td>___</td></tr>
+    <tr><td>W8</td><td>50–60</td><td>500</td><td>≥80%</td><td>___</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="note note-red" style="margin-top:0;border-radius:0 0 8px 8px;border-top:none">
+  <strong>Rule:</strong> If accuracy &lt;5% below target in any week, re-do that week's MCQs before moving forward.
+</div>
+
+<!-- ═══ NOTES FILES ═══ -->
+<h2>Subject Notes Files</h2>
+<div class="file-list">
+  <span class="file-tag">notes/medicine.md</span>
+  <span class="file-tag">notes/psm.md</span>
+  <span class="file-tag">notes/pathology.md</span>
+  <span class="file-tag">notes/microbiology.md</span>
+  <span class="file-tag">notes/surgery.md</span>
+  <span class="file-tag">notes/pharmacology.md</span>
+  <span class="file-tag">notes/anatomy.md</span>
+  <span class="file-tag">notes/biochemistry.md</span>
+  <span class="file-tag">notes/shorts.md</span>
+</div>
+
+</body>
+</html>
