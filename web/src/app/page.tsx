@@ -161,10 +161,11 @@ function DayView({ day, isToday }: { day: DayPlan; isToday: boolean }) {
 }
 
 // ─── Sidebar ──────────────────────────────────────────────────────────────────
-function Sidebar({ selectedDay, onSelect, todayNum }: {
+function Sidebar({ selectedDay, onSelect, todayNum, onClose }: {
   selectedDay: number;
   onSelect: (n: number) => void;
   todayNum: number;
+  onClose?: () => void;
 }) {
   const { dayProgress, isDayComplete } = useProgressContext();
   const selectedRef = useRef<HTMLButtonElement>(null);
@@ -179,7 +180,14 @@ function Sidebar({ selectedDay, onSelect, todayNum }: {
   };
 
   return (
-    <div className="w-64 flex-shrink-0 bg-white border-r border-slate-200 flex flex-col overflow-hidden">
+    <div className="w-72 md:w-64 flex-shrink-0 bg-white border-r border-slate-200 flex flex-col overflow-hidden h-full">
+      {/* Mobile close header */}
+      {onClose && (
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 md:hidden">
+          <span className="text-sm font-bold text-slate-700">Select Day</span>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none p-1">✕</button>
+        </div>
+      )}
       <div className="flex-1 overflow-y-auto py-1">
         {phases.map(phase => {
           const days = PLAN.filter(d => d.phase === phase);
@@ -198,11 +206,11 @@ function Sidebar({ selectedDay, onSelect, todayNum }: {
                   <button
                     key={d.day}
                     ref={isSelected ? selectedRef : undefined}
-                    onClick={() => onSelect(d.day)}
-                    className={`w-full text-left px-3 py-2 flex items-center gap-2 transition-all border-b border-slate-100
+                    onClick={() => { onSelect(d.day); onClose?.(); }}
+                    className={`w-full text-left px-3 py-2.5 md:py-2 flex items-center gap-2 transition-all border-b border-slate-100
                       ${isSelected ? 'bg-blue-50 border-l-2 border-l-blue-500' : 'hover:bg-slate-50 border-l-2 border-l-transparent'}`}
                   >
-                    <div className={`w-7 h-7 rounded-md flex items-center justify-center text-xs font-bold flex-shrink-0
+                    <div className={`w-8 h-8 md:w-7 md:h-7 rounded-md flex items-center justify-center text-xs font-bold flex-shrink-0
                       ${isComplete ? 'bg-green-500 text-white' : isToday ? 'bg-green-100 text-green-700 ring-2 ring-green-400' : isSelected ? 'bg-blue-500 text-white' : 'bg-slate-100 text-slate-600'}`}>
                       {isComplete ? '✓' : d.day}
                     </div>
@@ -310,7 +318,7 @@ function SettingsPanel({ onClose }: { onClose: () => void }) {
 }
 
 // ─── Stats Bar ────────────────────────────────────────────────────────────────
-function StatsBar({ todayNum, onSettings }: { todayNum: number; onSettings: () => void }) {
+function StatsBar({ todayNum, onSettings, onOpenSidebar }: { todayNum: number; onSettings: () => void; onOpenSidebar: () => void }) {
   const { overallProgress, streakCount, daysUntilExam, exportProgress, importProgress } = useProgressContext();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -331,55 +339,79 @@ function StatsBar({ todayNum, onSettings }: { todayNum: number; onSettings: () =
   }
 
   return (
-    <div className="bg-white border-b border-slate-200 px-4 py-2 flex items-center gap-3 overflow-x-auto flex-shrink-0">
-      {/* Brand / student identity */}
-      <div className="flex items-center gap-2 flex-shrink-0">
-        <span className="text-xl">🩺</span>
-        <div>
-          <p className="text-sm font-black text-slate-800 leading-tight">{STUDENT_CONFIG.name}</p>
-          <p className="text-xs text-slate-500 leading-none">{STUDENT_CONFIG.exam} · Target {STUDENT_CONFIG.targetScore}+</p>
+    <div className="bg-white border-b border-slate-200 px-3 md:px-4 py-2 flex-shrink-0">
+      {/* Main row */}
+      <div className="flex items-center gap-2 md:gap-3">
+        {/* Hamburger – mobile only */}
+        <button
+          onClick={onOpenSidebar}
+          className="md:hidden p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 flex-shrink-0"
+          aria-label="Open day list"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        {/* Brand */}
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <span className="text-xl">🩺</span>
+          <div>
+            <p className="text-sm font-black text-slate-800 leading-tight">{STUDENT_CONFIG.name}</p>
+            <p className="text-xs text-slate-500 leading-none hidden sm:block">{STUDENT_CONFIG.exam} · Target {STUDENT_CONFIG.targetScore}+</p>
+          </div>
+        </div>
+
+        <div className="hidden md:block h-8 w-px bg-slate-200 flex-shrink-0" />
+
+        {/* Stats chips – hide less critical ones on small screens */}
+        {[
+          { label: 'Progress', value: `${pct}%`, sub: `${daysComplete}/60d`, color: 'text-blue-600', always: true },
+          { label: 'Streak',   value: `${streak}d`, sub: 'streak', color: 'text-orange-500', always: false },
+          { label: 'Exam in',  value: `${examDays}d`, sub: 'Dec 13', color: examDays <= 21 ? 'text-red-600' : 'text-slate-700', always: true },
+        ].map(s => (
+          <div key={s.label} className={`px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 flex-shrink-0 ${s.always ? '' : 'hidden sm:block'}`}>
+            <p className={`text-sm md:text-base font-black leading-none ${s.color}`}>{s.value}</p>
+            <p className="text-xs text-slate-400 leading-none mt-0.5">{s.sub}</p>
+          </div>
+        ))}
+
+        {/* Progress bar – hidden on mobile */}
+        <div className="hidden md:flex flex-1 min-w-20 flex-col">
+          <div className="flex justify-between text-xs text-slate-400 mb-0.5">
+            <span>60-day plan</span><span>{pct}%</span>
+          </div>
+          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-blue-500 to-violet-500 rounded-full transition-all duration-700"
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="flex items-center gap-1 md:gap-1.5 ml-auto flex-shrink-0">
+          <button onClick={onSettings} className="px-2 md:px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors">
+            ⚙️ <span className="hidden sm:inline">Settings</span>
+          </button>
+          <button onClick={exportProgress} className="px-2 md:px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors">
+            ↓ <span className="hidden sm:inline">Backup</span>
+          </button>
+          <button onClick={() => fileInputRef.current?.click()} className="px-2 md:px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors">
+            ↑ <span className="hidden sm:inline">Restore</span>
+          </button>
+          <input ref={fileInputRef} type="file" accept=".json" className="hidden" onChange={handleImport} />
         </div>
       </div>
 
-      <div className="h-8 w-px bg-slate-200 flex-shrink-0" />
-
-      {/* Stats chips */}
-      {[
-        { label: 'Progress', value: `${pct}%`, sub: `${daysComplete}/60 days`, color: 'text-blue-600' },
-        { label: 'Streak',   value: `${streak}d`, sub: 'consecutive', color: 'text-orange-500' },
-        { label: 'Exam in',  value: `${examDays}d`, sub: 'Dec 13, 2026', color: examDays <= 21 ? 'text-red-600' : 'text-slate-700' },
-      ].map(s => (
-        <div key={s.label} className="px-3 py-1 rounded-lg bg-slate-50 border border-slate-200 flex-shrink-0">
-          <p className={`text-base font-black leading-none ${s.color}`}>{s.value}</p>
-          <p className="text-xs text-slate-400 leading-none mt-0.5">{s.sub}</p>
-        </div>
-      ))}
-
-      {/* Progress bar */}
-      <div className="flex-1 min-w-20">
-        <div className="flex justify-between text-xs text-slate-400 mb-0.5">
-          <span>60-day plan</span><span>{pct}%</span>
-        </div>
-        <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+      {/* Mobile progress bar */}
+      <div className="mt-2 md:hidden">
+        <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-blue-500 to-violet-500 rounded-full transition-all duration-700"
             style={{ width: `${pct}%` }}
           />
         </div>
-      </div>
-
-      {/* Actions */}
-      <div className="flex items-center gap-1.5 flex-shrink-0">
-        <button onClick={onSettings} className="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors">
-          ⚙️ Settings
-        </button>
-        <button onClick={exportProgress} className="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors">
-          ↓ Backup
-        </button>
-        <button onClick={() => fileInputRef.current?.click()} className="px-2.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors">
-          ↑ Restore
-        </button>
-        <input ref={fileInputRef} type="file" accept=".json" className="hidden" onChange={handleImport} />
       </div>
     </div>
   );
@@ -391,6 +423,7 @@ function AppInner() {
   const todayNum = todayDayNum();
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [showSettings, setShowSettings] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // After hydration, default to today's day
   const effectiveDay = selectedDay ?? todayNum;
@@ -418,15 +451,37 @@ function AppInner() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
-      <StatsBar todayNum={todayNum} onSettings={() => setShowSettings(true)} />
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar
-          selectedDay={effectiveDay}
-          onSelect={setSelectedDay}
-          todayNum={todayNum}
-        />
+      <StatsBar todayNum={todayNum} onSettings={() => setShowSettings(true)} onOpenSidebar={() => setSidebarOpen(true)} />
+
+      <div className="flex flex-1 overflow-hidden relative">
+        {/* Desktop sidebar – always visible on md+ */}
+        <div className="hidden md:flex">
+          <Sidebar selectedDay={effectiveDay} onSelect={setSelectedDay} todayNum={todayNum} />
+        </div>
+
+        {/* Mobile sidebar – slide-in drawer */}
+        {sidebarOpen && (
+          <div className="md:hidden fixed inset-0 z-40 flex">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+              onClick={() => setSidebarOpen(false)}
+            />
+            {/* Drawer */}
+            <div className="relative z-50 flex h-full shadow-2xl">
+              <Sidebar
+                selectedDay={effectiveDay}
+                onSelect={setSelectedDay}
+                todayNum={todayNum}
+                onClose={() => setSidebarOpen(false)}
+              />
+            </div>
+          </div>
+        )}
+
         <DayView day={day} isToday={effectiveDay === todayNum} />
       </div>
+
       {showSettings && <SettingsPanel onClose={() => setShowSettings(false)} />}
     </div>
   );
