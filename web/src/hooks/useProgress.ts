@@ -51,12 +51,16 @@ function saveSettings(s: Settings) {
 
 /** Returns the calendar date string (YYYY-MM-DD) for a given 1-based day number,
  *  accounting for skipped dates. */
+function localIso(d: Date): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
 function computeDateForDay(dayNum: number, startDate: string, skippedDates: string[]): string {
   const skipped = new Set(skippedDates);
   let counted = 0;
   const cur = new Date(startDate + 'T00:00:00');
   while (true) {
-    const iso = cur.toISOString().slice(0, 10);
+    const iso = localIso(cur);
     if (!skipped.has(iso)) {
       counted++;
       if (counted === dayNum) return iso;
@@ -70,11 +74,11 @@ function computeDateForDay(dayNum: number, startDate: string, skippedDates: stri
 /** Returns today's 1-based day number in the plan (1–60). Returns 0 if before plan start. */
 function computeTodayDayNum(startDate: string, skippedDates: string[]): number {
   const skipped = new Set(skippedDates);
-  const todayIso = new Date().toISOString().slice(0, 10);
+  const todayIso = localIso(new Date());
   let dayNum = 0;
   const cur = new Date(startDate + 'T00:00:00');
   while (true) {
-    const iso = cur.toISOString().slice(0, 10);
+    const iso = localIso(cur);
     if (!skipped.has(iso)) dayNum++;
     if (iso === todayIso) return Math.max(1, Math.min(60, dayNum));
     if (iso > todayIso) return Math.max(1, dayNum - 1);
